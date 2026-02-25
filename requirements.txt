@@ -1,4 +1,5 @@
 pyrogram==2.0.106
-TgCrypto
-yt-dlp
-python-dotenv
+TgCrypto==1.2.5
+yt-dlp>=2024.1.1
+python-dotenv>=1.0.0
+aiohttp>=3.9.0
