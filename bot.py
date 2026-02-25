@@ -18,15 +18,15 @@ from pyrogram.types import (
 import yt_dlp
 
 # ─────────────────────────────────────────────────────────────
-# CONFIG
+# CONFIG — loaded from environment variables
 # ─────────────────────────────────────────────────────────────
-API_ID      = 0               # my.telegram.org API ID
-API_HASH    = ""              # my.telegram.org API Hash
-BOT_TOKEN   = ""              # @BotFather token
+API_ID      = int(os.environ["API_ID"])        # my.telegram.org API ID
+API_HASH    = os.environ["API_HASH"]           # my.telegram.org API Hash
+BOT_TOKEN   = os.environ["BOT_TOKEN"]          # @BotFather token
 
-DOWNLOAD_DIR  = "./downloads"
-COOKIE_PATH   = "./cookies.txt"
-MAX_TG_SIZE   = 2_000_000_000   # 2 GB
+DOWNLOAD_DIR  = os.environ.get("DOWNLOAD_DIR", "./downloads")
+COOKIE_PATH   = os.environ.get("COOKIE_PATH",  "./cookies.txt")
+MAX_TG_SIZE   = int(os.environ.get("MAX_TG_SIZE", 2_000_000_000))
 
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
