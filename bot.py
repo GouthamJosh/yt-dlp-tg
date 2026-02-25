@@ -9,6 +9,8 @@ Commands:
 """
 
 import os, asyncio, time, math, shutil
+from dotenv import load_dotenv
+load_dotenv()
 from pathlib import Path
 
 from pyrogram import Client, filters
